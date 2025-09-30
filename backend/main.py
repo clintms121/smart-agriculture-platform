@@ -1,7 +1,7 @@
 #endpoints (defines API routes)
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-form . import models, database
+from . import models, database
 
 app = FastAPI()
 
