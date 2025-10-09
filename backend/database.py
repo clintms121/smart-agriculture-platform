@@ -1,22 +1,19 @@
+import os
 import psycopg2
 from psycopg2.extras import RealDictCursor
-import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Use environment variables for production
 DB_CONFIG = {
-    """
-    "dbname": os.getenv("DB_NAME", "smart_agriculture"),
-    "user": os.getenv("DB_USER", "postgres"),
-    "password": os.getenv("DB_PASSWORD", "YourSecurePassword123!"),
-    "host": os.getenv("DB_HOST", "smart-agriculture-db.abc123.us-east-1.rds.amazonaws.com"),
-    "port": int(os.getenv("DB_PORT", "5432"))
-    """
 
-    "dbname": "smart_agriculture",
-    "user": "postgres",
-    "password": "Owlee101#",
-    "host": "localhost",
-    "port": 5432
+    "dbname": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "host": os.getenv("DB_HOST"),
+    "port": int(os.getenv("DB_PORT", "5432"))
+
 
 }
 
